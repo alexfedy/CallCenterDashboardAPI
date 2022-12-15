@@ -543,6 +543,7 @@ function checkDataVals() {
 
 let testData = document.getElementById("test-data-button");
 testData.addEventListener("click", async () => {
+  let token = localStorage.getItem("jwt");
   let statusList = [
     "Offline",
     "Available",
@@ -576,7 +577,7 @@ testData.addEventListener("click", async () => {
         body: JSON.stringify(agent),
         headers: {
           "Content-Type": "application/json",
-          "auth-token": `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk5MWFjOTU1ZGI1OTc0YTczNWMzNDEiLCJpYXQiOjE2NzA5NzgyOTF9.xFThxpcVdbYEkCs60UoiK6QyorrI7J1CUGjkm9RsK9g`,
+          "auth-token": token,
         },
       });
       if (res.status !== 200) {
