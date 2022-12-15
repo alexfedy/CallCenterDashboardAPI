@@ -164,7 +164,6 @@ function getPathToData(obj, pth) {
   for (let part of pth) {
     currObjPath = currObjPath[part];
   }
-  console.log(currObjPath);
   return currObjPath;
 }
 

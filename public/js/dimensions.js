@@ -90,9 +90,9 @@ let max_y_amount = parseInt(window.innerHeight / gaps);
 let colorSchemeDefault = [
   "hsl(150, 50%, 60%)",
   "hsl(0, 100%, 50%)",
-  "hsl(200, 50%, 90%)",
+  "hsl(200, 50%, 80%)",
   "hsl(210, 100%, 50%)",
-  "hsl(210, 20%, 10%)",
+  "hsl(210, 20%, 30%)",
 ];
 let colorSchemeBlue = [
   "hsl(180, 100%, 75%)",
@@ -144,11 +144,11 @@ let colorSchemePurple = [
   "hsl(290, 10%, 80%)",
 ];
 let colorSchemeSky = [
-  "hsl(210, 100%, 50%)",
-  "hsl(220, 80%, 75%)",
-  "hsl(220, 70%, 85%)",
-  "hsl(220, 60%, 90%)",
-  "hsl(220, 40%, 95%)",
+  "hsl(210, 100%, 40%)",
+  "hsl(220, 80%, 55%)",
+  "hsl(220, 70%, 65%)",
+  "hsl(220, 60%, 75%)",
+  "hsl(220, 40%, 80%)",
 ];
 
 var colorSchemeArray = [
@@ -165,29 +165,11 @@ var colorSchemeArray = [
 
 var colorScheme = colorSchemeArray[0];
 
-var agentsPerStatus = {
-  // Available: 0,
-  // On_Call: 0,
-  // After_Call: 0,
-  // Preview_Task: 0,
-  // Offline: 0,
-};
+var agentsPerStatus = {};
 
-var statusDictionary = {
-  // Available: colorScheme[0],
-  // On_Call: colorScheme[1],
-  // After_Call: colorScheme[2],
-  // Preview_Task: colorScheme[3],
-  // Offline: colorScheme[4],
-};
+var statusDictionary = {};
 
-var statusList = [
-  // "Available",
-  // "On_Call",
-  // "After_Call",
-  // "Preview_Task",
-  // "Offline",
-];
+var statusList = [];
 
 async function parseNewStatus(new_status) {
   statusList.push(new_status);
@@ -209,7 +191,7 @@ async function parseNewStatus(new_status) {
   let new_status_style = document.createElement(`style`);
   new_status_style.innerHTML = `
   #${id_num}{
-    background-color: var(--key-all-bg);
+    border-radius: 5px;
     color: var(--key-${new_status}-text);
   }
   #${new_status}_Count_Card{

@@ -16,6 +16,7 @@ function lightTheme(statusDictionary) {
     .querySelector(":root")
     .style.setProperty("--button-hover-text-color", "white");
   document.querySelector(":root").style.setProperty("--text-color", "black");
+  document.querySelector(":root").style.setProperty("--key-all-bg", "#f6f6f6");
   //key colors
   for (let i = 0; i < statusList.length; i++) {
     let statusToChange = statusList[i];
@@ -53,6 +54,9 @@ function darkTheme(statusDictionary) {
   document
     .querySelector(":root")
     .style.setProperty("--button-hover-text-color", "#FFFFFF");
+  document
+    .querySelector(":root")
+    .style.setProperty("--key-all-bg", "rgb(18,18,18,0.9)");
   //key colors
   for (let i = 0; i < statusList.length; i++) {
     let statusToChange = statusList[i];
